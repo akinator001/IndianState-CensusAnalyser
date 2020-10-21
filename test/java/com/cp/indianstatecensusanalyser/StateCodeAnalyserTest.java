@@ -6,9 +6,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class StateCodeAnalyserTest {
-	public static final String STATE_CODE_DATA = "StateCode.csv";
-	public static final String WRONG_STATE_CODE_DATA = "statecode2.csv";
-	public static final String WRONG_STATE_CODE_DATA_HEADER = "StateCensus.csv";
+	public static final String STATE_CODE_DATA = "./StateCode.csv";
+	public static final String WRONG_STATE_CODE_DATA = "./statecode2.csv";
+	public static final String WRONG_STATE_CODE_DATA_HEADER = "./StateCensus.csv";
 		
 	
 	@Test
