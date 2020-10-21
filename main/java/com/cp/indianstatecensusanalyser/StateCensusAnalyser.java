@@ -23,6 +23,9 @@ public class StateCensusAnalyser {
 		}
 		catch(IOException e) {
 			throw new CensusException("File not found", CensusException.ExceptionType.WRONG_CSV); 
-		}	
+		}
+		catch(RuntimeException e) {
+			throw new CensusException("Internal data of file is not valid ", CensusException.ExceptionType.WRONG_HEADER);
+		}
 	}
 }
