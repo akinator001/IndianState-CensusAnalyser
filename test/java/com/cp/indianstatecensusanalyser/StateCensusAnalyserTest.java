@@ -7,11 +7,23 @@ import org.junit.Test;
 
 public class StateCensusAnalyserTest {
 	public static final String STATE_CENSUS_DATA = "./StateCensus.csv";
-
+	public static final String WRONG_STATE_CENSUS_DATA ="./StateCensus2.csv";
+			
     @Test
-    public void ensureNoOfRecordMatches(){
+    public void ensureNoOfRecordMatches() throws CensusException{
         StateCensusAnalyser stateCensusAnalyser = new StateCensusAnalyser();
         int records = stateCensusAnalyser.loadCSVFile(Paths.get(STATE_CENSUS_DATA));
         Assert.assertEquals(29, records);
     }
+ 
+    @Test
+    public void checkWrongPath() throws CensusException{
+    	try {
+    		StateCensusAnalyser stateCensusAnalyser = new StateCensusAnalyser();
+    		stateCensusAnalyser.loadCSVFile(Paths.get(STATE_CENSUS_DATA));
+    	}
+    	catch(CensusException e) {
+    		Assert.assertEquals(CensusException.ExceptionType.WRONG_CSV, e.type);
+    	}
+    }    
 }
