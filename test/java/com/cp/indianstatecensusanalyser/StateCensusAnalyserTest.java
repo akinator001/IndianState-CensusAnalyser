@@ -38,4 +38,5 @@ public class StateCensusAnalyserTest {
     		Assert.assertEquals(CensusException.ExceptionType.WRONG_HEADER, e.type);;
     	}
     }
+   
 }
