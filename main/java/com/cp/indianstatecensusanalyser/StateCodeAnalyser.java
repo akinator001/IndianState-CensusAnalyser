@@ -14,8 +14,9 @@ import com.opencsv.bean.CsvToBeanBuilder;
 public class StateCodeAnalyser {
 	public int loadCSVFile(Path path) throws CensusException {
 		try (Reader reader = Files.newBufferedReader(path)){
-			Iterator<StateCode> stateCodeIterator = new OpenCSVBuilder().getCsvFileIterator(reader, StateCode.class);
-			return new OpenCSVBuilder().getCount(stateCodeIterator);
+			ICSVBuilder csvBuilder = CSVBuilderFactory.createCSVBuilder();
+			Iterator<StateCensus> stateCensusIterator = csvBuilder.getCSVFileIterator(reader, StateCensus.class);
+			return new OpenCSVBuilder().getCount(stateCensusIterator);
 		}
 		catch(IOException e) {
 			throw new CensusException("File not found", CensusException.ExceptionType.WRONG_CSV); 
