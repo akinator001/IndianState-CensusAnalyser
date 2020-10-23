@@ -12,7 +12,7 @@ import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
 public class StateCodeAnalyser {
-	public int loadCSVFile(Path path) throws CensusException {
+	public int loadCSVFile(Path path) throws CensusException, CSVException {
 		try (Reader reader = Files.newBufferedReader(path)){
 			ICSVBuilder csvBuilder = CSVBuilderFactory.createCSVBuilder();
 			Iterator<StateCensus> stateCensusIterator = csvBuilder.getCSVFileIterator(reader, StateCensus.class);
