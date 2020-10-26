@@ -2,14 +2,14 @@ package com.cp.indianstatecensusanalyser;
 
 public class StateCensus {
 	public static String state;
-	public static long population;
+	public static String population;
 	public static long areaInSqKm;
 	public static long densityPerSqKm;
 
 	public StateCensus() {
 	}
 
-	public StateCensus(String state, long population, long areaInSqSKm, long densityPerSqKm) {
+	public StateCensus(String state, String population, long areaInSqSKm, long densityPerSqKm) {
 		this.state = state;
 		this.population = population;
 		this.areaInSqKm = areaInSqKm;
