@@ -3,7 +3,7 @@ package com.cp.indianstatecensusanalyser;
 public class StateCensus {
 	public static String state;
 	public static String population;
-	public static long areaInSqKm;
+	public static String areaInSqKm;
 	public static String densityPerSqKm;
 
 	public StateCensus() {
